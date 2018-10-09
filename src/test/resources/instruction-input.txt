@@ -1,0 +1,60 @@
+
+#	-------------------------------
+#	Test Input and Expected Output 
+#	-------------------------------
+
+#	These are examples for a square surface with coordinates (0,0) and (5,5)
+#	as the south-west and north-east most corners respectively.
+
+
+	# 1
+	PLACE 0,0,NORTH
+	MOVE
+	REPORT
+	# Expected Output: 0, 1, NORTH
+
+
+	# 2
+	PLACE 0,0,NORTH
+	LEFT
+	REPORT
+	# Expected Output: 0, 0, WEST
+
+
+	# 3
+	PLACE 1,2,EAST
+	MOVE
+	MOVE
+	LEFT
+	MOVE
+	REPORT
+	# Expected Output: 3, 3, NORTH
+
+
+	# 4
+	# Invalid position if the surface-coordinates are (0,0) and (5,5)
+	PLACE 6,7,SOUTH	
+	REPORT
+	# Expected Output: 3, 3, NORTH (same as last position)
+	
+	
+	# 5
+	PLACE 5,5,EAST
+	MOVE
+	REPORT
+	# Expected Output: 5, 5, EAST (the last MOVE is ignored, being already on the surface-edge)
+	
+	
+	# 6
+	# Invalid direction value, place instruction ignored
+	PLACE 4,3,CENTRE	
+	REPORT
+	# Expected Output: 5, 5, EAST (same as last position)
+	
+	
+	# 7
+	RIGHT
+	MOVE
+	REPORT
+	# Expected Output: 5, 4, SOUTH
+	
